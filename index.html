@@ -52,6 +52,8 @@
             color: var(--text-light);
             overflow-x: hidden;
             line-height: 1.6;
+            width: 100%;
+            position: relative;
         }
 
         h1,
@@ -345,17 +347,19 @@
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 12vw, 10rem);
-            line-height: 0.8;
+            font-size: clamp(2.5rem, 10vw, 8rem);
+            line-height: 0.9;
             color: var(--primary);
             margin-bottom: 20px;
+            width: 100%;
+            padding: 0 20px;
         }
 
         .hero-accent {
             font-family: var(--accent);
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             color: var(--white);
-            margin-bottom: -40px;
+            margin-bottom: -20px;
             z-index: 1;
         }
 
@@ -873,35 +877,63 @@
 
         @media (max-width: 600px) {
             .hero-accent {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 0;
             }
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
             .profile-frame {
-                width: 260px;
-                height: 380px;
+                width: 220px;
+                height: 320px;
             }
             .profile-info h3 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             .event-modern {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             .card-modern {
-                padding: 60px 30px;
+                padding: 40px 20px;
+            }
+            .gift-card {
+                padding: 30px 20px;
             }
             .gift-card .account-number {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             footer .final-accent {
-                font-size: 4rem;
+                font-size: 3.5rem;
             }
             #music-control {
                 bottom: 20px;
                 left: 20px;
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
+                font-size: 0.8rem;
+            }
+            .title-area .subtitle {
+                font-size: 2.5rem;
+            }
+            .title-area h2 {
+                font-size: 2.2rem;
+            }
+            .section {
+                padding: 60px 15px;
+            }
+        }
+
+        /* Prevent AOS from breaking horizontal layout on mobile */
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
             }
         }
 
